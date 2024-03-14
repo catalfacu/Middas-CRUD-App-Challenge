@@ -13,13 +13,22 @@ export async function GET() {
 
 
 //Función POST que agrega un nuevo documento a la colección books de la base de datos
+//Utilizo try catch para capturar cualquier error correctamente
 export async function POST(request) {
-    const data = await request.json();
-    const newBook = new Book(data);
-    const savedBook = await newBook.save();
+    try {
+        const data = await request.json();
+        const newBook = new Book(data);
+        const savedBook = await newBook.save();
     
-    return NextResponse.json(savedBook);
+        return NextResponse.json(savedBook);
+    } catch (error) {
+        return NextResponse.json(error.message, {
+            status: 400
+        })
+    }
 };
+
+
 export function PUT() {
     return NextResponse.json({
         message: 'Posting element'
