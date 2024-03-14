@@ -19,3 +19,20 @@ export async function GET(request, { params }) {
         return NextResponse.json(error.message, {status: 400})
     }
 };
+
+
+//Utilizo esta función para poder editar datos del libro que busque mediante su id
+export async function PUT(request, {params}) {
+    try {
+        const data = await request.json();
+        const bookUpdated = await Book.findByIdAndUpdate(params._id, data, {new: true});
+
+//Si no se encuentra el libro buscado se ejecuta esta sentencia if
+        if(!bookUpdated) return NextResponse.json({message: "Tarea no encontrada"}, {status: 404});
+
+        return NextResponse.json(bookUpdated);
+
+    } catch (error) {
+        return NextResponse.json(error.message, {status: 400})
+    }
+};

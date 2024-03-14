@@ -29,11 +29,6 @@ export async function POST(request) {
 };
 
 
-export function PUT() {
-    return NextResponse.json({
-        message: 'Posting element'
-    })
-};
 export function DELETE() {
     return NextResponse.json({
         message: 'Posting element'
