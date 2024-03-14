@@ -30,5 +30,6 @@ const bookSchema = new Schema({
 
 })
 
+// Chequeo que exista el modelo 'Book' primero
 //Exporto el modelo 'Book' para utilizarlo en otras partes de la app
 export default models.Book || model('Book', bookSchema);
