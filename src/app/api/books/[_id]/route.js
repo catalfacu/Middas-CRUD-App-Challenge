@@ -37,6 +37,7 @@ export async function PUT(request, {params}) {
     }
 };
 
+
 //Esta función busca por ID un libro y si existe lo elimina de la base de datos
 export async function DELETE(request, {params}) {
     try {

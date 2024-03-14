@@ -28,7 +28,10 @@ const bookSchema = new Schema({
         default: false
     }
 
-})
+},
+{
+    timestamps: true
+});
 
 // Chequeo que exista el modelo 'Book' primero
 //Exporto el modelo 'Book' para utilizarlo en otras partes de la app

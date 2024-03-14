@@ -27,10 +27,3 @@ export async function POST(request) {
         })
     }
 };
-
-
-export function DELETE() {
-    return NextResponse.json({
-        message: 'Posting element'
-    })
-};
