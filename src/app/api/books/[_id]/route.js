@@ -6,7 +6,7 @@ import Book from '@/models/books';
 export async function GET(request, { params }) {
     try {
         connectDB()
-        const bookById = await Book.findById(params);
+        const bookById = await Book.findById(params._id);
         
 //Aca estoy validando si se encontro el libro que buscaba o no
         if(!bookById) return NextResponse.json({
@@ -33,6 +33,21 @@ export async function PUT(request, {params}) {
         return NextResponse.json(bookUpdated);
 
     } catch (error) {
+        return NextResponse.json(error.message, {status: 400})
+    }
+};
+
+//Esta función busca por ID un libro y si existe lo elimina de la base de datos
+export async function DELETE(request, {params}) {
+    try {
+    const bookDeleted = await Book.findByIdAndDelete(params._id);
+
+//Sino encuentra el libro ejecuta este if
+    if(!bookDeleted) return NextResponse.json({message:"Libro no encontrado"}, {status: 404});
+        
+    return NextResponse.json({message: "Tarea eliminada con exito"});
+    } catch (error) {
+       
         return NextResponse.json(error.message, {status: 400})
     }
 };
