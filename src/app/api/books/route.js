@@ -18,9 +18,7 @@ export async function POST(request) {
     const newBook = new Book(data);
     const savedBook = await newBook.save();
     
-    return NextResponse.json({
-        message: 'Posting element'
-    })
+    return NextResponse.json(savedBook);
 };
 export function PUT() {
     return NextResponse.json({
