@@ -1,6 +1,6 @@
 import {connect, connection} from 'mongoose';
 
-
+//Utilizo este dato para actualizar el estado de la conexion a la base de datos 
 let conn = {
     isConnected: false
 }
