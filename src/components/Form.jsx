@@ -26,6 +26,7 @@ const createBook = async () => {
         });
         const data = await res.json();
 
+//Aqui chequeo que la peticion haya sido exitosa, si lo es nos redirije nuevamente al home
     if(res.status === 200) {
         router.push("/");
     }
