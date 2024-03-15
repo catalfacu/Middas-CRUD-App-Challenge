@@ -15,7 +15,7 @@ async function HomePage() {
   const data = await booksData();
 
   return (
-    <div>
+    <div className='flex justify-center items-center'>
       {data.map((book, id) => {
         return (
           <BookCard data={book} key={id}/>
