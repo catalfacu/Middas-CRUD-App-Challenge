@@ -7,7 +7,7 @@ function NavBar() {
         <h1>Middas Library</h1>
         <ul className='flex justify-end gap-5'>
             <Link href='/'> Home </Link>
-            <Link href='/books/favorites'> Favoritos </Link>
+            {/* <Link href='/books/favorites'> Favoritos </Link> */}
             <Link href='/books/new'> Crear+ </Link>
         </ul>
     </nav>
