@@ -1,9 +1,22 @@
 import React from 'react'
+import { connectDB } from '@/utils/db';
+import Book from '@/models/book';
 
+async function booksData() {
+  connectDB();
 
-function HomePage() {
+  const books = await Book.find();
+  
+  return books;
+};
+
+async function HomePage() {
+  const data = await booksData();
+
   return (
-    <div>HomePage</div>
+    <div>
+      {JSON.stringify(data)}
+    </div>
   )
 }
 

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/utils/db";
-import Book from '@/models/books';
+import Book from '@/models/book';
 
 //Funcion GET que busca todos los registro de la coleccion Book en la base de datos
 export async function GET() {
