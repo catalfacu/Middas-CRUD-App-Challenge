@@ -1,9 +1,5 @@
 import React from 'react'
+import NewBook from '../new/page'
 
-function BookInformation() {
-  return (
-    <div>BookInformation</div>
-  )
-}
 
-export default BookInformation
+export default NewBook
