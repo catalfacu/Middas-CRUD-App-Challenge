@@ -1,6 +1,7 @@
 import React from 'react'
 import { connectDB } from '@/utils/db';
 import Book from '@/models/book';
+import BookCard from '@/components/BookCard';
 
 async function booksData() {
   connectDB();
@@ -15,7 +16,11 @@ async function HomePage() {
 
   return (
     <div>
-      {JSON.stringify(data)}
+      {data.map((book, id) => {
+        return (
+          <BookCard data={book} key={id}/>
+        )
+      })}
     </div>
   )
 }
